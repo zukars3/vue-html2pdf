@@ -239,9 +239,7 @@ export default {
 				pdfBlobUrl = this.pdfFile
 			}
 
-			if (this.enableDownload) {
-				pdfBlobUrl = await html2PdfSetup.save().output('bloburl')
-			}
+			pdfBlobUrl = await html2PdfSetup.save().output('bloburl')
 
 			if (pdfBlobUrl) {
 				const res = await fetch(pdfBlobUrl)
